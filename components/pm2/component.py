@@ -14,14 +14,14 @@ class Pm2(Component):
 
     def configure(self):
         # self.provide('pm2', self)
-        self.voltoapp = self.require_one('voltoapp')
-        self.varnish = self.require_one('varnish:http')
+        # self.voltoapp = self.require_one('voltoapp')
+        # self.varnish = self.require_one('varnish:http')
         self.zopecommon = self.require_one('zopecommon')
         self += File(
             'website.pm2.config.js', 
             source='website.pm2.config.js'
             )
-        self += RestartVoltoapp(self.voltoappname) 
+        # self += RestartVoltoapp(self.voltoappname) 
         # self += RestartZopeInstances(self.zopename)
 
 
